@@ -1,7 +1,7 @@
-<h3 text-align='center'> Microservices-Based Application Deployment on Kubernetes /<h3>
+<h3 text-align='center'> Microservices-Based Application Deployment on Kubernetes <h3>
 This repository contains the Infrastructure as Code (IaaC) setup for deploying a microservices-based architecture application on Kubernetes. The application is based on the Socks Shop microservice application from [microservices repository](https://github.com/microservices-demo/microservices-demo.git).
 
-<h2 text-align='center'> Setup Details /<h2>
+<h2 text-align='center'> Setup Details <h2>
 1. Provisioning Infrastructure
 The infrastructure is provisioned on AWS using Amazon Elastic Kubernetes Service (EKS). The setup includes creating the necessary AWS resources for Kubernetes cluster provisioning.
 
@@ -11,7 +11,7 @@ Kubernetes configuration files are provided in the infrastructure folder. These 
 3. Continuous Integration and Continuous Deployment (CI/CD)
 Continuous Integration and Continuous Deployment (CI/CD) pipelines are set up for automated testing, building, and deploying the application. The CI/CD pipeline utilizes GitOps principles and ArgoCD for managing deployments. The deployment workflow is triggered automatically upon changes to the repository.
 
-<h4 text-align='center'> Prerequisites /<h4>
+<h4 text-align='center'> Prerequisites <h4>
 To deploy the microservices application using this setup, ensure you have the following prerequisites installed:
 
 1. AWS CLI
@@ -19,10 +19,11 @@ To deploy the microservices application using this setup, ensure you have the fo
 3. Terraform
 4. ArgoCD
 5. GitOps action
-![CI/CD with GitOps](image-401-1024x421.png)
+6. 
+![CI/CD with GitOps](/images/image-401-1024x421.png)
 
 
- <h4 text-align='center'> Directory Structure /<h4>
+ <h4 text-align='center'> Directory Structure <h4>
 infrastructure
 |       |-- main.tf
 |       |-- variables.tf
@@ -74,13 +75,17 @@ terraform apply
 
 ```
 The CLI output is given as:
-![after terraform apply](after_terraform_apply.PNG)
+
+![after terraform apply](/images/after_terraform_apply.PNG)
 
 Then the Elastic Kubernetes Cluster (EKS) on the AWS console CLI is created:
-![AWS console](aws-console.PNG)
+
+![AWS console](/images/aws-console.PNG)
 
 The kubectl nodes are obtained:
-![get nodes](kubectl_get_node.PNG)
+
+![get nodes](/images/kubectl_get_node.PNG)
+
 
 Installing ArgoCD
 ```
@@ -90,12 +95,13 @@ Installing ArgoCD
  
 ```
 
-![installing ArgoCD](installing_agroCD.PNG)
+![installing ArgoCD](/images/installing_agroCD.PNG)
+
 ```
 kubectl get pods -n argocd
  
 ```
-![getting nodes](kubectl_get_node.PNG)
+![getting nodes](/images/kubectl_get_node.PNG)
 
 Port forwarding to allow for the ArgoCD CLI
 
@@ -103,18 +109,26 @@ Port forwarding to allow for the ArgoCD CLI
 kubectl port-forward svc/argocd-server -n argocd 8080:443
  
 ```
-![port forwarding for Argo interface](port_forwarding_forArgoCLI_display.PNG)
-![AgroCLI interface](agrocd-interface.PNG)
+
+![port forwarding for Argo interface](/images/port_forwarding_forArgoCLI_display.PNG)
+
+
+![AgroCLI interface](/images/agrocd-interface.PNG)
 
 
 Signing into Argo CLI on powershell: This must be done on powershell while ran as an Administrator
-![signing in ArgoCli](signing_into_ArgoCli.PNG)
 
-![argocli-login](agrocd_logged-in.PNG)
+![signing in ArgoCli](/images/signing_into_ArgoCli.PNG)
+
+
+![argocli-login](/images/agrocd_logged-in.PNG)
+
 
 Synchronizing the sock-shop on ArgoCLI
-![sync_sock-shop](sync_sock-shop.PNG)
-![sync_sock-shop](deployed_sockshop_on_argocd.PNG)
+
+![sync_sock-shop](/images/sync_sock-shop.PNG)
+
+![sync_sock-shop](/images/deployed_sockshop_on_argocd.PNG)
 
 Deploying Sock-Shop
 
