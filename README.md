@@ -132,9 +132,10 @@ Synchronizing the sock-shop on ArgoCLI
 
 Deploying Sock-Shop
 
-![connecting_pods](connecting_pods.PNG)
+![connecting_pods](/images/connecting_pods.PNG)
 
-![Deployed Sock-Shop](deplpoyed_sock_app.PNG)
+
+![Deployed Sock-Shop](/images/deplpoyed_sock_app.PNG)
 
 <h4 text-align='center'> Destroy the infrastructure using Terraform /<h4>
 
