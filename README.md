@@ -19,7 +19,7 @@ To deploy the microservices application using this setup, ensure you have the fo
 3. Terraform
 4. ArgoCD
 5. GitOps action
-6. 
+
 ![CI/CD with GitOps](/images/image-401-1024x421.png)
 
 
